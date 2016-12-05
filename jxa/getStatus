@@ -28,7 +28,7 @@ if (isTelegramRunning) {
 
     var TelegramWindow = Telegram.windows.byName('Telegram');
 
-  	status.currentChatName = TelegramWindow.staticTexts.at(2).value();
+    status.currentChatName = TelegramWindow.staticTexts.at(2).value();
   } catch (e) {}
 }
 
