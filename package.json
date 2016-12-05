@@ -1,7 +1,7 @@
 {
   "name": "osx-telegram",
   "version": "1.0.0",
-  "description": "```js const telegram = require('osx-telegram');",
+  "description": "Telegram OS X API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
