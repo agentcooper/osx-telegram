@@ -2,11 +2,22 @@
   "name": "osx-telegram",
   "version": "1.0.0",
   "description": "Telegram OS X API",
-  "keywords": ["telegram", "osx"],
+  "keywords": [
+    "telegram",
+    "osx"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Artem Tyurin <artem.tyurin@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentcooper/osx-telegram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentcooper/osx-telegram/issues"
+  },
+  "homepage": "https://github.com/agentcooper/osx-telegram#readme"
 }
