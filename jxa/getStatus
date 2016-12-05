@@ -1,0 +1,35 @@
+#!/usr/bin/env osascript -l JavaScript
+
+ObjC.import('stdlib');
+ObjC.import('AppKit');
+
+function isRunning(bundleIdentifier) {
+  var apps = ObjC.unwrap($.NSWorkspace.sharedWorkspace.runningApplications);
+
+  return apps.map(function(app) {
+    return ObjC.unwrap(app.bundleIdentifier);
+  }).filter(function(_bundleIdentifier) {
+    return _bundleIdentifier === bundleIdentifier;
+  }).length > 0;
+}
+
+var isTelegramRunning = isRunning('ru.keepcoder.Telegram');
+
+var status = {
+  isRunning: isTelegramRunning,
+  currentChatName: ''
+};
+
+if (isTelegramRunning) {
+  try {
+    var SystemEvents = Application('System Events');
+
+    var Telegram = SystemEvents.processes['Telegram'];
+
+    var TelegramWindow = Telegram.windows.byName('Telegram');
+
+  	status.currentChatName = TelegramWindow.staticTexts.at(2).value();
+  } catch (e) {}
+}
+
+JSON.stringify(status)
